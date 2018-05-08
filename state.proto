@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+message StateFilter {
+
+}
+
+message StateInfo {
+  message App {
+    string executable = 1;
+  }
+
+  App app = 1;
+}
+
+service State {
+  rpc GetState (StateFilter) returns (StateInfo) {
+  }
+}
